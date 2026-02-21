@@ -1,1 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>La Cocina del Alquimista</title>
+<style>
+  body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    background-color: #f5f0e6; /* beige artesanal */
+    color: #333;
+  }
 
+  /* Navegación fija */
+  header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    z-index: 1000;
+  }
+  nav {
+    display: flex;
+    justify-content: center;
+    padding: 1em;
+  }
+  nav a {
+    margin: 0 1.5em;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+  nav a:hover {
+    color: #b77c4a; /* dorado suave */
+  }
+
+  /* Sección principal (Home) */
+  .hero {
+    height: 100vh;
+    background: url('https://dl.dropboxusercontent.com/s/orenas6vd0ycs6visp1oq/092d4ef7-954d-42bd-a82b-a73637467e76.png') center/cover no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+  }
+  .hero h1 {
+    font-size: 3em;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+    margin-bottom: 0.5em;
+  }
+  .hero p {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.5);
+  }
+  .hero a {
+    background-color: #b77c4a;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.8em 1.5em;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s;
+  }
+  .hero a:hover {
+    background-color: #a06639;
+  }
+
+  section {
+    padding: 100px 20px 50px 20px;
+    max-width: 1000px;
+    margin: auto;
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 2em;
+    font-size: 2em;
+  }
+
+  .product {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2em;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+  }
+  .product:hover {
+    transform: translateY(-5px);
+  }
+  .product img {
+    max-width: 300px;
+    width: 100%;
+    margin-right: 20px;
+    border-radius: 10px;
+  }
+  .product-details {
+    max-width: 500px;
+  }
+  .product-details h3 {
+    margin: 0.5em 0;
+  }
+  .product-details p {
+    font-size: 1.1em;
+    color: #555;
+  }
+
+  footer {
+    text-align: center;
+    padding: 2em;
+    background: #fff;
+    box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+    margin-top: 50px;
+  }
+
+  /* Espacio para que header fijo no tape contenido */
+  .spacer {
+    height: 70px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#tortas">Tortas</a>
+    <a href="#postres">Postres</a>
+    <a href="#boxes">Boxes</a>
+  </nav>
+</header>
+
+<!-- Home -->
+<section id="home" class="hero">
+  <h1>La Cocina del Alquimista</h1>
+  <p>Catálogo artesanal de tortas, postres y boxes</p>
+  <a href="#tortas">Ver Productos</a>
+</section>
+
+<div class="spacer"></div>
+
+<!-- Tortas -->
+<section id="tortas">
+  <h2>🍰 Tortas</h2>
+  <div class="product">
+    <img src="https://dl.dropboxusercontent.com/s/orenas6vd0ycs6visp1oq/092d4ef7-954d-42bd-a82b-a73637467e76.png" alt="Torta Tres Leches">
+    <div class="product-details">
+      <h3>Torta Tres Leches</h3>
+      <p>$850</p>
+    </div>
+  </div>
+  <div class="product">
+    <img src="https://dl.dropboxusercontent.com/s/7xlgfghpv920gqbu2jll1/ChatGPT-Image-21-feb-2026-16_13_35.png" alt="Cheesecake clásico">
+    <div class="product-details">
+      <h3>Cheesecake clásico</h3>
+      <p>$700</p>
+    </div>
+  </div>
+  <div class="product">
+    <img src="https://dl.dropboxusercontent.com/s/x0alxofbfli6xdl2s95tt/image_imgupscaler.ai_Beta_2K.png" alt="Torta Chocolate">
+    <div class="product-details">
+      <h3>Torta Chocolate</h3>
+      <p>$780</p>
+    </div>
+  </div>
+</section>
+
+<!-- Postres -->
+<section id="postres">
+  <h2>🍪 Postres</h2>
+  <div class="product">
+    <img src="https://dl.dropboxusercontent.com/s/x0alxofbfli6xdl2s95tt/image_imgupscaler.ai_Beta_2K.png" alt="Brownie clásico">
+    <div class="product-details">
+      <h3>Brownie clásico</h3>
+      <p>$480</p>
+    </div>
+  </div>
+  <div class="product">
+    <img src="https://dl.dropboxusercontent.com/s/7xlgfghpv920gqbu2jll1/ChatGPT-Image-21-feb-2026-16_13_35.png" alt="Alfajor artesanal">
+    <div class="product-details">
+      <h3>Alfajor artesanal</h3>
+      <p>$350</p>
+    </div>
+  </div>
+</section>
+
+<!-- Boxes -->
+<section id="boxes">
+  <h2>🎁 Boxes</h2>
+  <div class="product">
+    <img src="https://dl.dropboxusercontent.com/s/orenas6vd0ycs6visp1oq/092d4ef7-954d-42bd-a82b-a73637467e76.png" alt="Box desayuno clásico">
+    <div class="product-details">
+      <h3>Box desayuno clásico</h3>
+      <p>$1200</p>
+    </div>
+  </div>
+  <div class="product">
+    <img src="https://dl.dropboxusercontent.com/s/7xlgfghpv920gqbu2jll1/ChatGPT-Image-21-feb-2026-16_13_35.png" alt="Box premium">
+    <div class="product-details">
+      <h3>Box premium</h3>
+      <p>$1800</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 La Cocina del Alquimista | Síguenos en redes sociales</p>
+</footer>
+
+</body>
+</html>
