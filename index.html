@@ -1,3 +1,4 @@
+<!-- ==================== INDEX.HTML ==================== -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -5,119 +6,36 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>La Cocina del Alquimista</title>
 <style>
-/* GENERAL */
-body {
-  font-family: Arial, sans-serif;
-  margin:0;
-  background: #f5f5f5;
-  color: #333;
-  scroll-behavior: smooth;
-}
-a { text-decoration:none; }
-
-/* HEADER */
-header {
-  position: fixed;
-  top:0;
-  width:100%;
-  background:#fff;
-  box-shadow:0 2px 5px rgba(0,0,0,0.1);
-  z-index:1000;
-}
+body { font-family: Arial, sans-serif; margin:0; background:#f5f5f5; color:#333; scroll-behavior: smooth; }
+a { text-decoration:none; color:inherit; }
+header { position: fixed; top:0; width:100%; background:#fff; box-shadow:0 2px 5px rgba(0,0,0,0.1); z-index:1000; }
 nav { display:flex; justify-content:center; padding:1em; }
-nav a { margin:0 1em; color:#333; font-weight:bold; transition: color 0.3s;}
+nav a { margin:0 1em; font-weight:bold; transition: color 0.3s; }
 nav a:hover { color:#b77c4a; }
-
 .spacer { height:60px; }
-
-/* HERO */
-.hero {
-  height:80vh;
-  background: url('./images/foto1.png') center/cover no-repeat;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  color:#fff;
-  position:relative;
-  overflow:hidden;
-}
-.hero::after {
-  content:'';
-  position:absolute;
-  top:0;left:0;width:100%;height:100%;
-  background:rgba(0,0,0,0.4);
-}
+.hero { height:80vh; background: url('./images/foto1.png') center/cover no-repeat; display:flex; justify-content:center; align-items:center; text-align:center; color:#fff; position:relative; overflow:hidden; }
+.hero::after { content:''; position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.4);}
 .hero h1, .hero p, .hero a { position:relative; z-index:1; }
 .hero h1 { font-size:3em; margin-bottom:0.5em; }
 .hero p { font-size:1.3em; margin-bottom:1.5em; }
-.hero a {
-  background:#b77c4a; color:#fff; padding:0.8em 1.5em; border-radius:5px;
-}
+.hero a { background:#b77c4a; color:#fff; padding:0.8em 1.5em; border-radius:5px; }
 .hero a:hover { background:#a06639; }
-
-/* ABOUT */
-.about {
-  background: rgba(255,255,255,0.95);
-  padding: 60px 20px;
-  text-align: center;
-  max-width: 900px;
-  margin: -50px auto 50px auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transform: translateX(-100%);
-  opacity:0;
-  animation: slideIn 1s forwards 0.2s;
-}
+.about { background: rgba(255,255,255,0.95); padding: 60px 20px; text-align: center; max-width: 900px; margin: -50px auto 50px auto; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transform: translateX(-100%); opacity:0; animation: slideIn 1s forwards 0.2s; }
 .about h2 { font-size: 2em; margin-bottom: 1em; }
 .about p { font-size: 1.1em; line-height: 1.6; }
-
-/* PRODUCTS */
-section {
-  padding:80px 20px;
-  max-width:1000px;
-  margin:auto;
-  transform: translateX(100%);
-  opacity:0;
-  animation: slideIn 1s forwards;
-}
+section { padding:80px 20px; max-width:1000px; margin:auto; transform: translateX(100%); opacity:0; animation: slideIn 1s forwards; }
 section:nth-of-type(3) { animation-delay: 0.4s; }
 section:nth-of-type(4) { animation-delay: 0.6s; }
 section:nth-of-type(5) { animation-delay: 0.8s; }
-
 section h2 { text-align:center; margin-bottom:2em; }
-
-.products-grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
-}
-
-article.product {
-  background:#fff;
-  padding:15px;
-  border-radius:10px;
-  text-align:center;
-  box-shadow:0 3px 10px rgba(0,0,0,0.1);
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-article.product:hover {
-  transform: translateY(-5px);
-  box-shadow:0 6px 18px rgba(0,0,0,0.2);
-}
+.products-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
+article.product { background:#fff; padding:15px; border-radius:10px; text-align:center; box-shadow:0 3px 10px rgba(0,0,0,0.1); transition: transform 0.2s, box-shadow 0.2s; }
+article.product:hover { transform: translateY(-5px); box-shadow:0 6px 18px rgba(0,0,0,0.2); }
 article.product img { width:100%; border-radius:10px; margin-bottom:10px; }
-
-/* FOOTER */
-footer { text-align:center; padding:2em; background:#fff; margin-top:50px; box-shadow:0 -2px 4px rgba(0,0,0,0.1); }
-
-/* ANIMATIONS */
-@keyframes slideIn {
-  to { transform: translateX(0); opacity:1; }
-}
-
-/* RESPONSIVE */
-@media (max-width: 768px) {
-  nav { flex-direction: column; padding: 0.5em; }
+footer { text-align:center; padding:2em; background:#fff; margin-top:50px; box-shadow:0 -2px 4px rgba(0,0,0,0.1);}
+@keyframes slideIn { to { transform: translateX(0); opacity:1; } }
+@media (max-width:768px){
+  nav { flex-direction: column; padding:0.5em; }
   nav a { margin:0.5em 0; }
   .hero h1 { font-size:2em; }
   .hero p { font-size:1em; }
@@ -129,7 +47,6 @@ footer { text-align:center; padding:2em; background:#fff; margin-top:50px; box-s
 </style>
 </head>
 <body>
-
 <header>
   <nav>
     <a href="#home">Home</a>
@@ -139,10 +56,8 @@ footer { text-align:center; padding:2em; background:#fff; margin-top:50px; box-s
     <a href="#boxes">Boxes</a>
   </nav>
 </header>
-
 <div class="spacer"></div>
 
-<!-- HERO -->
 <section id="home" class="hero">
   <div>
     <h1>La Cocina del Alquimista</h1>
@@ -151,53 +66,49 @@ footer { text-align:center; padding:2em; background:#fff; margin-top:50px; box-s
   </div>
 </section>
 
-<!-- ABOUT -->
 <section id="about" class="about">
   <h2>Sobre La Cocina del Alquimista</h2>
   <p>Cada torta es un experimento de sabor y pasión. Nuestro nombre refleja la magia de combinar ingredientes y transformar simples elementos en experiencias únicas.</p>
 </section>
 
-<!-- TORTAS -->
 <section id="tortas">
   <h2>🍰 Tortas</h2>
   <div class="products-grid">
     <article class="product">
-      <img src="./images/foto1.png" alt="Torta Tres Leches">
-      <h3>Torta Tres Leches</h3>
+      <a href="torta-tres-leches.html"><img src="./images/foto1.png" alt="Torta Tres Leches"></a>
+      <h3><a href="torta-tres-leches.html">Torta Tres Leches</a></h3>
       <p>$850</p>
     </article>
     <article class="product">
-      <img src="./images/foto2.png" alt="Cheesecake">
-      <h3>Cheesecake clásico</h3>
+      <a href="cheesecake.html"><img src="./images/foto2.png" alt="Cheesecake"></a>
+      <h3><a href="cheesecake.html">Cheesecake clásico</a></h3>
       <p>$700</p>
     </article>
   </div>
 </section>
 
-<!-- POSTRES -->
 <section id="postres">
   <h2>🍪 Postres</h2>
   <div class="products-grid">
     <article class="product">
-      <img src="./images/foto3.png" alt="Brownie clásico">
-      <h3>Brownie clásico</h3>
+      <a href="brownie.html"><img src="./images/foto3.png" alt="Brownie clásico"></a>
+      <h3><a href="brownie.html">Brownie clásico</a></h3>
       <p>$480</p>
     </article>
   </div>
 </section>
 
-<!-- BOXES -->
 <section id="boxes">
   <h2>🎁 Boxes</h2>
   <div class="products-grid">
     <article class="product">
-      <img src="./images/foto1.png" alt="Box desayuno">
-      <h3>Box desayuno clásico</h3>
+      <a href="box-desayuno.html"><img src="./images/foto1.png" alt="Box desayuno"></a>
+      <h3><a href="box-desayuno.html">Box desayuno clásico</a></h3>
       <p>$1200</p>
     </article>
     <article class="product">
-      <img src="./images/foto4.avif" alt="Box premium">
-      <h3>Box premium</h3>
+      <a href="box-premium.html"><img src="./images/foto2.png" alt="Box premium"></a>
+      <h3><a href="box-premium.html">Box premium</a></h3>
       <p>$1800</p>
     </article>
   </div>
@@ -206,7 +117,125 @@ footer { text-align:center; padding:2em; background:#fff; margin-top:50px; box-s
 <footer>
   <p>© 2026 La Cocina del Alquimista</p>
 </footer>
-
 </body>
 </html>
 
+<!-- ==================== TORTA-TRES-LECHES.HTML ==================== -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Torta Tres Leches</title>
+<style>
+body { font-family: Arial; padding:20px; background:#f9f9f9; }
+img { width:100%; max-width:400px; border-radius:10px; }
+a { color:#b77c4a; text-decoration:none; }
+a:hover { text-decoration:underline; }
+</style>
+</head>
+<body>
+<a href="index.html">&larr; Volver al catálogo</a>
+<h1>Torta Tres Leches</h1>
+<img src="./images/foto1.png" alt="Torta Tres Leches">
+<p>Deliciosa torta de tres leches, suave y esponjosa. Ideal para cumpleaños y celebraciones.</p>
+<p>Precio: $850</p>
+<p>Ingredientes: leche condensada, crema, bizcocho esponjoso, leche evaporada.</p>
+</body>
+</html>
+
+<!-- ==================== CHEESECAKE.HTML ==================== -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cheesecake clásico</title>
+<style>
+body { font-family: Arial; padding:20px; background:#f9f9f9; }
+img { width:100%; max-width:400px; border-radius:10px; }
+a { color:#b77c4a; text-decoration:none; }
+a:hover { text-decoration:underline; }
+</style>
+</head>
+<body>
+<a href="index.html">&larr; Volver al catálogo</a>
+<h1>Cheesecake clásico</h1>
+<img src="./images/foto2.png" alt="Cheesecake clásico">
+<p>Cheesecake cremoso con base de galleta, ideal para los amantes del queso y el dulce perfecto.</p>
+<p>Precio: $700</p>
+<p>Ingredientes: queso crema, galletas, manteca, azúcar, huevos.</p>
+</body>
+</html>
+
+<!-- ==================== BROWNIE.HTML ==================== -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brownie clásico</title>
+<style>
+body { font-family: Arial; padding:20px; background:#f9f9f9; }
+img { width:100%; max-width:400px; border-radius:10px; }
+a { color:#b77c4a; text-decoration:none; }
+a:hover { text-decoration:underline; }
+</style>
+</head>
+<body>
+<a href="index.html">&larr; Volver al catálogo</a>
+<h1>Brownie clásico</h1>
+<img src="./images/foto3.png" alt="Brownie clásico">
+<p>Brownie de chocolate intenso, húmedo y esponjoso. Perfecto para acompañar con café o té.</p>
+<p>Precio: $480</p>
+<p>Ingredientes: chocolate, manteca, azúcar, huevos, harina.</p>
+</body>
+</html>
+
+<!-- ==================== BOX-DESAYUNO.HTML ==================== -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Box desayuno clásico</title>
+<style>
+body { font-family: Arial; padding:20px; background:#f9f9f9; }
+img { width:100%; max-width:400px; border-radius:10px; }
+a { color:#b77c4a; text-decoration:none; }
+a:hover { text-decoration:underline; }
+</style>
+</head>
+<body>
+<a href="index.html">&larr; Volver al catálogo</a>
+<h1>Box desayuno clásico</h1>
+<img src="./images/foto1.png" alt="Box desayuno clásico">
+<p>Box ideal para empezar el día con todo: incluye selección de tortas, galletas y más.</p>
+<p>Precio: $1200</p>
+<p>Contenido: torta pequeña, galletas artesanales, jugo natural.</p>
+</body>
+</html>
+
+<!-- ==================== BOX-PREMIUM.HTML ==================== -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Box premium</title>
+<style>
+body { font-family: Arial; padding:20px; background:#f9f9f9; }
+img { width:100%; max-width:400px; border-radius:10px; }
+a { color:#b77c4a; text-decoration:none; }
+a:hover { text-decoration:underline; }
+</style>
+</head>
+<body>
+<a href="index.html">&larr; Volver al catálogo</a>
+<h1>Box premium</h1>
+<img src="./images/foto2.png" alt="Box premium">
+<p>Box premium con productos seleccionados para sorprender y disfrutar al máximo.</p>
+<p>Precio: $1800</p>
+<p>Contenido: torta mediana, selección de postres, jugo premium, detalles decorativos.</p>
+</body>
+</html>
