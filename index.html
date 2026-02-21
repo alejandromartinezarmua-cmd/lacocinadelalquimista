@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Cocina del Alquimista - Catálogo</title>
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Arial', sans-serif; }
+    body { background:#111; color:#f5f0e1; line-height:1.6; }
+    a { color:#f5f0e1; text-decoration:none; }
+
+    header { position:fixed; top:0; width:100%; background:#111; border-bottom:2px solid #d4af37; z-index:1000; }
+    nav { display:flex; justify-content:space-between; align-items:center; padding:1rem 2rem; }
+    nav .logo { font-size:1.8rem; font-weight:bold; color:#d4af37; }
+    nav ul { list-style:none; display:flex; gap:2rem; }
+    nav ul li a:hover { color:#ffd700; }
+
+    .banner { 
+      height:70vh; 
+      background: url('background: url('https://www.dropbox.com/scl/fi/7xlgfghpv920gqbu2jll1/ChatGPT-Image-21-feb-2026-16_13_35.png?raw=1') center/cover no-repeat; 
+      display:flex; justify-content:center; align-items:center; text-align:center;
+      margin-top:70px; position:relative; overflow:hidden;
+    }
+    .banner::after {
+      content:"";
+      position:absolute; top:0; left:0; width:100%; height:100%;
+      background: rgba(0,0,0,0.5);
+    }
+    .banner h1 {
+      position:relative; font-size:3rem; color:#ffd700; text-shadow:2px2px8px #000;
+      animation:fadeIn 2s ease forwards;
+    }
+    @keyframes fadeIn { 0%{opacity:0; transform:translateY(-20px);} 100%{opacity:1; transform:translateY(0);} }
+
+    section { padding:4rem 2rem; max-width:1200px; margin:0 auto; }
+    section h2 { font-size:2.5rem; margin-bottom:2rem; border-bottom:2px solid #d4af37; display:inline-block; padding-bottom:0.5rem; }
+
+    .products { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:2rem; }
+
+    .product-card {
+      background:#1a1a1a; border:1px solid #d4af37; border-radius:10px;
+      overflow:hidden; box-shadow: 0 4px 15px rgba(212,175,55,0.3);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .product-card:hover {
+      transform: scale(1.05); box-shadow: 0 8px 25px rgba(212,175,55,0.6);
+    }
+    .product-card img { width:100%; display:block; transition: transform 0.3s; }
+    .product-card:hover img { transform: scale(1.1); }
+
+    .product-info { padding:1rem; }
+    .product-info h3 { font-size:1.3rem; margin-bottom:0.5rem; color:#ffd700; }
+    .product-info p { font-size:1rem; color:#f5f0e1; margin-bottom:0.8rem; }
+
+    .product-info .btn {
+      display:inline-block; padding:0.5rem 1rem; background:#d4af37; color:#111;
+      border-radius:5px; font-weight:bold; transition: background 0.3s, transform 0.3s;
+    }
+    .product-info .btn:hover { background:#ffd700; transform: translateY(-3px); }
+
+    footer { background:#111; color:#d4af37; text-align:center; padding:2rem 0; margin-top:2rem; border-top:2px solid #d4af37; }
+
+    @media (max-width:768px){
+      nav ul { flex-direction:column; gap:1rem; }
+      .banner h1 { font-size:2rem; padding:0.5rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <div class="logo">La Cocina del Alquimista</div>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#tortas">Tortas</a></li>
+        <li><a href="#postres">Postres</a></li>
+        <li><a href="#boxes">Boxes</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="banner" id="inicio">
+    <h1>Bienvenidos a La Cocina del Alquimista</h1>
+  </section>
+
+  <section id="tortas">
+    <h2>Tortas</h2>
+    <div class="products">
+      <div class="product-card">
+        <img src="https://dl.dropboxusercontent.com/s/TORTA1.png" alt="Torta Tres Leches">
+        <div class="product-info">
+          <h3>Torta Tres Leches</h3>
+          <p>$850</p>
+          <a href="#" class="btn">Ver más</a>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="https://dl.dropboxusercontent.com/s/TORTA2.png" alt="Cheesecake Clásico">
+        <div class="product-info">
+          <h3>Cheesecake Clásico</h3>
+          <p>$700</p>
+          <a href="#" class="btn">Ver más</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="postres">
+    <h2>Postres</h2>
+    <div class="products">
+      <div class="product-card">
+        <img src="https://dl.dropboxusercontent.com/s/POSTRE1.png" alt="Brownie Clásico">
+        <div class="product-info">
+          <h3>Brownie Clásico</h3>
+          <p>$480</p>
+          <a href="#" class="btn">Ver más</a>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="https://dl.dropboxusercontent.com/s/POSTRE2.png" alt="Alfajor Artesanal">
+        <div class="product-info">
+          <h3>Alfajor Artesanal</h3>
+          <p>$350</p>
+          <a href="#" class="btn">Ver más</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="boxes">
+    <h2>Boxes</h2>
+    <div class="products">
+      <div class="product-card">
+        <img src="https://dl.dropboxusercontent.com/s/BOX1.png" alt="Box Desayuno Clásico">
+        <div class="product-info">
+          <h3>Box Desayuno Clásico</h3>
+          <p>$1200</p>
+          <a href="#" class="btn">Ver más</a>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="https://dl.dropboxusercontent.com/s/BOX2.png" alt="Box Premium">
+        <div class="product-info">
+          <h3>Box Premium</h3>
+          <p>$1800</p>
+          <a href="#" class="btn">Ver más</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2026 La Cocina del Alquimista. Todos los derechos reservados.
+  </footer>
+
+</body>
+</html>
