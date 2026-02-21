@@ -5,146 +5,134 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>La Cocina del Alquimista</title>
 <meta name="description" content="Catálogo artesanal de tortas, postres y boxes de La Cocina del Alquimista. Experiencias dulces con pasión y magia.">
-<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 <style>
-  /* General */
-  body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    background: url('./images/bg-fondo.jpg') center/cover no-repeat fixed;
-    color: #333;
-    scroll-behavior: smooth;
-  }
-  a { text-decoration: none; }
+body {
+  font-family: 'Poppins', sans-serif;
+  margin:0;
+  background: url('./images/bg-fondo.jpg') center/cover no-repeat fixed;
+  color: #333;
+  scroll-behavior: smooth;
+}
+a { text-decoration: none; }
 
-  /* Navegación */
-  header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: rgba(255,255,255,0.95);
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    z-index: 1000;
-  }
-  nav {
-    display: flex;
-    justify-content: center;
-    padding: 1em;
-  }
-  nav a {
-    margin: 0 1.5em;
-    color: #333;
-    font-weight: 600;
-    transition: color 0.3s;
-  }
-  nav a:hover { color: #b77c4a; }
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(255,255,255,0.95);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  z-index: 1000;
+}
+nav {
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+}
+nav a {
+  margin: 0 1.5em;
+  color: #333;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+nav a:hover { color: #b77c4a; }
 
-  .spacer { height: 70px; }
+.spacer { height: 70px; }
 
-  /* Hero / Home */
-  .hero {
-    height: 100vh;
-    background: url('./images/home-bg.jpg') center/cover no-repeat;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    color: #fff;
-    position: relative;
-  }
-  .hero::after {
-    content: '';
-    position: absolute;
-    top:0; left:0; width:100%; height:100%;
-    background: rgba(0,0,0,0.4);
-  }
-  .hero h1, .hero p, .hero a {
-    position: relative;
-    z-index: 1;
-  }
-  .hero h1 { font-size: 3em; text-shadow: 2px 2px 8px rgba(0,0,0,0.5); margin-bottom: 0.5em; }
-  .hero p { font-size: 1.3em; max-width: 600px; text-shadow: 1px 1px 6px rgba(0,0,0,0.5); margin-bottom: 1.5em; }
-  .hero a {
-    background-color: #b77c4a; color:#fff; padding:0.8em 1.5em; border-radius:5px; font-weight:bold;
-    transition: background 0.3s;
-  }
-  .hero a:hover { background-color:#a06639; }
+.hero {
+  height: 100vh;
+  background: url('./images/home-bg.jpg') center/cover no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  top:0; left:0; width:100%; height:100%;
+  background: rgba(0,0,0,0.4);
+}
+.hero h1, .hero p, .hero a { position: relative; z-index: 1; }
+.hero h1 { font-size: 3em; text-shadow: 2px 2px 8px rgba(0,0,0,0.5); margin-bottom: 0.5em; }
+.hero p { font-size: 1.3em; max-width: 600px; text-shadow: 1px 1px 6px rgba(0,0,0,0.5); margin-bottom: 1.5em; }
+.hero a {
+  background-color: #b77c4a; color:#fff; padding:0.8em 1.5em; border-radius:5px; font-weight:bold;
+  transition: background 0.3s;
+}
+.hero a:hover { background-color:#a06639; }
 
-  /* About / Historia */
-  .about {
-    background: rgba(255,255,255,0.95);
-    padding: 60px 20px;
-    text-align: center;
-    max-width: 900px;
-    margin: -50px auto 50px auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1s forwards 0.2s;
-  }
-  .about h2 { font-size: 2em; margin-bottom: 1em; }
-  .about p { font-size: 1.1em; line-height: 1.6; }
+.about {
+  background: rgba(255,255,255,0.95);
+  padding: 60px 20px;
+  text-align: center;
+  max-width: 900px;
+  margin: -50px auto 50px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards 0.2s;
+}
+.about h2 { font-size: 2em; margin-bottom: 1em; }
+.about p { font-size: 1.1em; line-height: 1.6; }
 
-  /* Secciones Productos */
-  section {
-    padding: 80px 20px;
-    max-width: 1000px;
-    margin: auto;
-    opacity: 0;
-    transform: translateY(20px);
-    animation: fadeInUp 1s forwards;
-  }
-  section:nth-of-type(3) { animation-delay: 0.4s; } /* Tortas */
-  section:nth-of-type(4) { animation-delay: 0.6s; } /* Postres */
-  section:nth-of-type(5) { animation-delay: 0.8s; } /* Boxes */
+section {
+  padding: 80px 20px;
+  max-width: 1000px;
+  margin: auto;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
+}
+section:nth-of-type(3) { animation-delay: 0.4s; }
+section:nth-of-type(4) { animation-delay: 0.6s; }
+section:nth-of-type(5) { animation-delay: 0.8s; }
+section h2 { text-align: center; margin-bottom: 2em; font-size: 2em; }
 
-  section h2 { text-align: center; margin-bottom: 2em; font-size: 2em; }
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 20px;
+}
 
-  .products-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-    gap: 20px;
-  }
+article.product {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+article.product:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+}
+article.product img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+article.product figcaption h3 { margin:0.5em 0; }
+article.product figcaption p { font-size:1.1em; color:#555; }
 
-  article.product {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    background: #fff;
-    padding: 15px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-  article.product:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 18px rgba(0,0,0,0.2);
-  }
-  article.product img {
-    max-width: 100%;
-    border-radius: 10px;
-    margin-bottom: 10px;
-  }
-  article.product figcaption h3 { margin:0.5em 0; }
-  article.product figcaption p { font-size:1.1em; color:#555; }
+footer {
+  text-align: center;
+  padding: 2em;
+  background: rgba(255,255,255,0.95);
+  box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
+  margin-top: 50px;
+}
 
-  /* Footer */
-  footer {
-    text-align: center;
-    padding: 2em;
-    background: rgba(255,255,255,0.95);
-    box-shadow: 0 -2px 4px rgba(0,0,0,0.1);
-    margin-top: 50px;
-  }
-
-  /* Animaciones */
-  @keyframes fadeInUp {
-    to { opacity: 1; transform: translateY(0); }
-  }
+@keyframes fadeInUp {
+  to { opacity: 1; transform: translateY(0); }
+}
 </style>
 </head>
 <body>
@@ -161,14 +149,12 @@
 
 <div class="spacer"></div>
 
-<!-- Home -->
 <section id="home" class="hero">
   <h1>La Cocina del Alquimista</h1>
   <p>Bienvenido al catálogo artesanal de tortas, postres y boxes. Cada creación tiene su magia y su historia.</p>
   <a href="#about">Conoce nuestra historia</a>
 </section>
 
-<!-- About -->
 <section id="about" class="about">
   <h2>Sobre La Cocina del Alquimista</h2>
   <p>
@@ -179,13 +165,12 @@
 
 <main>
 
-<!-- Tortas -->
 <section id="tortas">
   <h2>🍰 Tortas</h2>
   <div class="products-grid">
     <article class="product">
       <figure>
-        <img src="./images/092d4ef7-954d-42bd-a82b-a73637467e76.png" alt="Torta Tres Leches artesanal con crema">
+        <img src="./images/torta-tres-leches.png" alt="Torta Tres Leches artesanal con crema">
         <figcaption>
           <h3>Torta Tres Leches</h3>
           <p>$850</p>
@@ -194,7 +179,7 @@
     </article>
     <article class="product">
       <figure>
-        <img src="./images/ChatGPT-Image-21-feb-2026-16_13_35.png" alt="Cheesecake clásico artesanal">
+        <img src="./images/cheesecake.png" alt="Cheesecake clásico artesanal">
         <figcaption>
           <h3>Cheesecake clásico</h3>
           <p>$700</p>
@@ -203,7 +188,7 @@
     </article>
     <article class="product">
       <figure>
-        <img src="./images/image_imgupscaler.ai_Beta_2K.png" alt="Torta Chocolate artesanal con frutos">
+        <img src="./images/chocolate.png" alt="Torta Chocolate artesanal con frutos">
         <figcaption>
           <h3>Torta Chocolate</h3>
           <p>$780</p>
@@ -213,13 +198,12 @@
   </div>
 </section>
 
-<!-- Postres -->
 <section id="postres">
   <h2>🍪 Postres</h2>
   <div class="products-grid">
     <article class="product">
       <figure>
-        <img src="./images/image_imgupscaler.ai_Beta_2K.png" alt="Brownie clásico artesanal">
+        <img src="./images/chocolate.png" alt="Brownie clásico artesanal">
         <figcaption>
           <h3>Brownie clásico</h3>
           <p>$480</p>
@@ -228,7 +212,7 @@
     </article>
     <article class="product">
       <figure>
-        <img src="./images/ChatGPT-Image-21-feb-2026-16_13_35.png" alt="Alfajor artesanal">
+        <img src="./images/cheesecake.png" alt="Alfajor artesanal">
         <figcaption>
           <h3>Alfajor artesanal</h3>
           <p>$350</p>
@@ -238,13 +222,12 @@
   </div>
 </section>
 
-<!-- Boxes -->
 <section id="boxes">
   <h2>🎁 Boxes</h2>
   <div class="products-grid">
     <article class="product">
       <figure>
-        <img src="./images/092d4ef7-954d-42bd-a82b-a73637467e76.png" alt="Box desayuno clásico">
+        <img src="./images/torta-tres-leches.png" alt="Box desayuno clásico">
         <figcaption>
           <h3>Box desayuno clásico</h3>
           <p>$1200</p>
@@ -253,7 +236,7 @@
     </article>
     <article class="product">
       <figure>
-        <img src="./images/ChatGPT-Image-21-feb-2026-16_13_35.png" alt="Box premium artesanal">
+        <img src="./images/cheesecake.png" alt="Box premium artesanal">
         <figcaption>
           <h3>Box premium</h3>
           <p>$1800</p>
