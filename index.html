@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>La Cocina del Alquimista</title>
 <style>
+/* GENERAL */
 body {
   font-family: Arial, sans-serif;
   margin:0;
@@ -12,6 +13,7 @@ body {
   color: #333;
   scroll-behavior: smooth;
 }
+a { text-decoration:none; }
 header {
   position: fixed;
   top:0;
@@ -21,7 +23,7 @@ header {
   z-index:1000;
 }
 nav { display:flex; justify-content:center; padding:1em; }
-nav a { margin:0 1em; color:#333; font-weight:bold; text-decoration:none; }
+nav a { margin:0 1em; color:#333; font-weight:bold; }
 nav a:hover { color:#b77c4a; }
 
 .spacer { height:60px; }
@@ -41,6 +43,11 @@ article.product {
   border-radius:10px;
   text-align:center;
   box-shadow:0 3px 10px rgba(0,0,0,0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+article.product:hover {
+  transform: translateY(-5px);
+  box-shadow:0 6px 18px rgba(0,0,0,0.2);
 }
 article.product img { width:100%; border-radius:10px; margin-bottom:10px; }
 
@@ -61,15 +68,41 @@ article.product img { width:100%; border-radius:10px; margin-bottom:10px; }
   background:rgba(0,0,0,0.4);
 }
 .hero h1, .hero p { position:relative; z-index:1; }
-.hero h1 { font-size:3em; }
-.hero p { font-size:1.3em; }
+.hero h1 { font-size:3em; margin-bottom:0.5em; }
+.hero p { font-size:1.3em; margin-bottom:1.5em; }
 .hero a {
   position:relative; z-index:1;
-  background:#b77c4a; color:#fff; padding:0.8em 1.5em; border-radius:5px; text-decoration:none;
+  background:#b77c4a; color:#fff; padding:0.8em 1.5em; border-radius:5px;
 }
 .hero a:hover { background:#a06639; }
 
+/* ABOUT */
+.about {
+  background: rgba(255,255,255,0.95);
+  padding: 60px 20px;
+  text-align: center;
+  max-width: 900px;
+  margin: -50px auto 50px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+.about h2 { font-size: 2em; margin-bottom: 1em; }
+.about p { font-size: 1.1em; line-height: 1.6; }
+
+/* FOOTER */
 footer { text-align:center; padding:2em; background:#fff; margin-top:50px; box-shadow:0 -2px 4px rgba(0,0,0,0.1); }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  nav { flex-direction: column; padding: 0.5em; }
+  nav a { margin:0.5em 0; }
+  .hero h1 { font-size:2em; }
+  .hero p { font-size:1em; }
+  .hero a { padding:0.6em 1em; font-size:0.9em; }
+  .products-grid { grid-template-columns:1fr; }
+  section { padding:50px 15px; }
+  .about { margin:0 10px 50px 10px; padding:30px 15px; }
+}
 </style>
 </head>
 <body>
@@ -86,6 +119,7 @@ footer { text-align:center; padding:2em; background:#fff; margin-top:50px; box-s
 
 <div class="spacer"></div>
 
+<!-- HERO -->
 <section id="home" class="hero">
   <div>
     <h1>La Cocina del Alquimista</h1>
@@ -94,11 +128,13 @@ footer { text-align:center; padding:2em; background:#fff; margin-top:50px; box-s
   </div>
 </section>
 
-<section id="about">
+<!-- ABOUT -->
+<section id="about" class="about">
   <h2>Sobre La Cocina del Alquimista</h2>
   <p>Cada torta es un experimento de sabor y pasión. Nuestro nombre refleja la magia de combinar ingredientes y transformar simples elementos en experiencias únicas.</p>
 </section>
 
+<!-- TORTAS -->
 <section id="tortas">
   <h2>🍰 Tortas</h2>
   <div class="products-grid">
@@ -115,6 +151,7 @@ footer { text-align:center; padding:2em; background:#fff; margin-top:50px; box-s
   </div>
 </section>
 
+<!-- POSTRES -->
 <section id="postres">
   <h2>🍪 Postres</h2>
   <div class="products-grid">
@@ -126,6 +163,7 @@ footer { text-align:center; padding:2em; background:#fff; margin-top:50px; box-s
   </div>
 </section>
 
+<!-- BOXES -->
 <section id="boxes">
   <h2>🎁 Boxes</h2>
   <div class="products-grid">
