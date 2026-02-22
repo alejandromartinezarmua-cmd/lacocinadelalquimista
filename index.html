@@ -1,125 +1,143 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>La Cocina del Alquimista - Catálogo</title>
-<style>
-body { font-family: Arial, sans-serif; margin:0; background:#f5f5f5; color:#333; scroll-behavior:smooth; }
-a { text-decoration:none; color:inherit; }
-header { position: fixed; top:0; width:100%; background:#fff; box-shadow:0 2px 5px rgba(0,0,0,0.1); z-index:1000; }
-nav { display:flex; justify-content:center; padding:1em; flex-wrap:wrap; }
-nav a { margin:0 1em; font-weight:bold; transition: color 0.3s; }
-nav a:hover { color:#b77c4a; }
-.spacer { height:60px; }
-.hero { height:50vh; background: url('./images/foto1.png') center/cover no-repeat; display:flex; justify-content:center; align-items:center; text-align:center; color:#fff; position:relative; overflow:hidden; }
-.hero::after { content:''; position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.4);}
-.hero h1, .hero p, .hero a { position:relative; z-index:1; }
-.hero h1 { font-size:2.5em; margin-bottom:0.5em; }
-.hero p { font-size:1.2em; margin-bottom:1em; }
-.hero a { background:#b77c4a; color:#fff; padding:0.8em 1.5em; border-radius:5px; }
-.hero a:hover { background:#a06639; }
-section { padding:80px 20px; max-width:1000px; margin:auto; }
-section h2 { text-align:center; margin-bottom:2em; }
-.products-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
-article.product { background:#fff; padding:15px; border-radius:10px; text-align:center; box-shadow:0 3px 10px rgba(0,0,0,0.1); transition: transform 0.2s, box-shadow 0.2s; }
-article.product:hover { transform: translateY(-5px); box-shadow:0 6px 18px rgba(0,0,0,0.2); }
-article.product img { width:100%; height:200px; object-fit:cover; border-radius:10px; margin-bottom:10px; }
-footer { text-align:center; padding:2em; background:#fff; margin-top:50px; box-shadow:0 -2px 4px rgba(0,0,0,0.1);}
-@media (max-width:768px){
-  nav { flex-direction: column; padding:0.5em; }
-  nav a { margin:0.5em 0; }
-  .hero h1 { font-size:1.8em; }
-  .hero p { font-size:1em; }
-  .products-grid { grid-template-columns:1fr; }
-  section { padding:50px 15px; }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Cocina del Alquimista</title>
+  <meta name="description" content="La Cocina del Alquimista - Tartas, tortas, bombs y más. Sabores invocados desde lo desconocido">
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-  <nav>
-    <a href="#home">Home</a>
-    <a href="#panes">Panes</a>
-    <a href="#kits">Kits</a>
-    <a href="#tartas">Tartas</a>
-    <a href="#postres">Postres</a>
-  </nav>
-</header>
-<div class="spacer"></div>
+  <!-- Canvas Background for Particles -->
+  <canvas id="particles-canvas"></canvas>
+  
+  <!-- WhatsApp Float Button -->
+  <a href="https://wa.me/5491160000000" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
 
-<section id="home" class="hero">
-  <div>
-    <h1>La Cocina del Alquimista</h1>
-    <p>Bienvenido a nuestro catálogo de panes, kits, tartas y postres mágicos</p>
-    <a href="#panes">Explorar productos</a>
-  </div>
-</section>
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="#home" class="logo">
+        <span class="logo-icon">✦</span>
+        <span class="logo-text">La Cocina del Alquimista</span>
+      </a>
+      <nav class="nav-menu">
+        <a href="#home" class="nav-link">Inicio</a>
+        <a href="#tartas" class="nav-link">Tartas</a>
+        <a href="#hechizos" class="nav-link">Hechizos</a>
+        <a href="#tortas" class="nav-link">Tortas</a>
+        <a href="#bombas" class="nav-link">Bombs</a>
+        <a href="#raciones" class="nav-link">Raciones</a>
+        <a href="#kits" class="nav-link">Kits</a>
+      </nav>
+      <button class="nav-toggle" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
 
-<section id="panes">
-<h2>Panes</h2>
-<div class="products-grid">
-<article class="product">
-<img src="./images/foto1.png" alt="Feather Fall">
-<h3>Feather Fall</h3>
-<p>Miga aireada, suave, liviana y crocante.</p>
-<p>Entera $500 / Porción $100</p>
-</article>
-<article class="product">
-<img src="./images/foto2.png" alt="Magic Missile">
-<h3>Magic Missile</h3>
-<p>Brioche, masa suave, ideal para sandwiches y hamburguesas.</p>
-<p>6x $225 / 12x $420</p>
-</article>
-<article class="product">
-<img src="./images/foto3.png" alt="Charm Person">
-<h3>Charm Person</h3>
-<p>Pan de 3 colores, miga suave, con puré de verduras.</p>
-<p>6x $148 / 12x $290</p>
-</article>
-<!-- Repetimos las 3 imágenes para los demás panes -->
-<article class="product"><img src="./images/foto1.png" alt="Detect Magic"><h3>Detect Magic</h3><p>Chipa rellena de queso.</p><p>6x $230 / 12x $390</p></article>
-<article class="product"><img src="./images/foto2.png" alt="Firebolt"><h3>Firebolt</h3><p>Pan de Ajo y Queso.</p><p>6x $200 / 12x $370</p></article>
-<article class="product"><img src="./images/foto3.png" alt="Tenser's Floating Disk"><h3>Tenser's Floating Disk</h3><p>Bagels suaves y crocantes.</p><p>6x $270 / 12x $420</p></article>
-<article class="product"><img src="./images/foto1.png" alt="Magic Weapon"><h3>Magic Weapon</h3><p>Palitos de queso crocantes.</p><p>6x $220 / 12x $370</p></article>
-</div>
-</section>
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <div class="hero-subtitle reveal">Sabores invocados desde lo desconocido</div>
+      <h1 class="hero-title reveal">La Cocina del Alquimista</h1>
+      <a href="#tartas" class="hero-btn reveal">Explorar el Grimorio</a>
+    </div>
+    <div class="hero-scroll-indicator">
+      <span></span>
+    </div>
+  </section>
 
-<section id="kits">
-<h2>Kits</h2>
-<div class="products-grid">
-<!-- Repetimos imágenes -->
-<article class="product"><img src="./images/foto2.png" alt="Kit Banquete Medieval"><h3>Kit Banquete Medieval</h3><p>12 Chipa, 12 Palitos de queso, 1 Focaccia</p><p>$1200</p></article>
-<article class="product"><img src="./images/foto3.png" alt="Kit Ritual de Colores"><h3>Kit Ritual de Colores</h3><p>6 Panes de 3 colores, 6 Brioche, 6 Palitos de queso</p><p>$550</p></article>
-<article class="product"><img src="./images/foto1.png" alt="Kit Taberna de Pueblo"><h3>Kit Taberna de Pueblo</h3><p>6 Chipa, 6 Palitos de queso, 6 Panes de ajo y queso</p><p>$600</p></article>
-<article class="product"><img src="./images/foto2.png" alt="Kit Prueba del Aprendiz"><h3>Kit Prueba del Aprendiz</h3><p>3 Chipa, 3 Palitos, 1 Porción de Focaccia</p><p>$200</p></article>
-<article class="product"><img src="./images/foto3.png" alt="Kit Maestro Viajero"><h3>Kit Maestro Viajero</h3><p>6 Bagels, 6 Brioche, 6 Panes de ajo y queso</p><p>$700</p></article>
-<article class="product"><img src="./images/foto1.png" alt="Kit Fuego y Queso"><h3>Kit Fuego y Queso</h3><p>12 Palitos de queso, 12 Chipa</p><p>$750</p></article>
-</div>
-</section>
+  <!-- Main Content -->
+  <main class="main-content">
+    <!-- Tartas Section -->
+    <section id="tartas" class="products-section">
+      <div class="section-header">
+        <span class="section-icon">◈</span>
+        <h2 class="section-title">Tartas</h2>
+        <p class="section-subtitle">Delicias crujientes del reino</p>
+      </div>
+      <div class="products-grid" id="tartas-grid"></div>
+    </section>
 
-<section id="tartas">
-<h2>Tartas</h2>
-<div class="products-grid">
-<article class="product"><img src="./images/foto2.png" alt="Lemon Pie Del Hechicero"><h3>Lemon Pie Del Hechicero</h3><p>Base crocante, Curd de limón y merengue suave.</p><p>23cm / $1500</p></article>
-<article class="product"><img src="./images/foto3.png" alt="Tarta DDL y Coco"><h3>Tarta DDL y Coco</h3><p>Base crocante con dulce de leche y coco suave.</p><p>23cm / $1300</p></article>
-<article class="product"><img src="./images/foto1.png" alt="Tarta Tofi Ojo del Abismo"><h3>Tarta Tofi Ojo del Abismo</h3><p>Masa crocante con dulce de leche y ganache de chocolate.</p><p>23cm / $1600</p></article>
-<article class="product"><img src="./images/foto2.png" alt="Tarta Durazno Hechizo de Oro"><h3>Tarta Durazno Hechizo de Oro</h3><p>Masa crocante, crema pastelera y duraznos.</p><p>23cm / $1100</p></article>
-<article class="product"><img src="./images/foto3.png" alt="Carrot Cake del Grimorio"><h3>Carrot Cake del Grimorio</h3><p>Bizcocho de zanahoria con frosting de queso crema.</p><p>23cm / $2000 / 18cm $1300</p></article>
-</div>
-</section>
+    <!-- Hechizos Section -->
+    <section id="hechizos" class="products-section">
+      <div class="section-header">
+        <span class="section-icon">⚗</span>
+        <h2 class="section-title">Hechizos del Alquimista</h2>
+        <p class="section-subtitle">Poderes oscuros en forma de postre</p>
+      </div>
+      <div class="products-grid" id="hechizos-grid"></div>
+    </section>
 
-<section id="postres">
-<h2>Postres y Pociones</h2>
-<div class="products-grid">
-<article class="product"><img src="./images/foto1.png" alt="Poción Pequeña"><h3>Poción Pequeña</h3><p>3 Bombas mixtas, 3 porciones de Brownie</p><p>$650</p></article>
-<article class="product"><img src="./images/foto2.png" alt="Poción Mediana"><h3>Poción Mediana</h3><p>6 Bombas mixtas, 6 porciones de Brownie</p><p>$1400</p></article>
-<article class="product"><img src="./images/foto3.png" alt="Poción Grande"><h3>Poción Grande</h3><p>12 Bombas mixtas, 12 porciones de Brownie</p><p>$2600</p></article>
-</div>
-</section>
+    <!-- Tortas Clásicas Section -->
+    <section id="tortas" class="products-section">
+      <div class="section-header">
+        <span class="section-icon">🏰</span>
+        <h2 class="section-title">Tortas Clásicas de la Taberna</h2>
+        <p class="section-subtitle">Recetas ancestrales perfeccionadas</p>
+      </div>
+      <div class="products-grid" id="tortas-grid"></div>
+    </section>
 
-<footer>
-<p>© 2026 La Cocina del Alquimista</p>
-</footer>
+    <!-- Bombas & Brownie Section -->
+    <section id="bombas" class="products-section">
+      <div class="section-header">
+        <span class="section-icon">💣</span>
+        <h2 class="section-title">Bombas & Brownie</h2>
+        <p class="section-subtitle">Artefactos de chocolate puro</p>
+      </div>
+      <div class="products-grid" id="bombas-grid"></div>
+    </section>
+
+    <!-- Raciones del Viajero Section -->
+    <section id="raciones" class="products-section">
+      <div class="section-header">
+        <span class="section-icon">🧙</span>
+        <h2 class="section-title">Raciones del Viajero</h2>
+        <p class="section-subtitle">Sustento para tu journey</p>
+      </div>
+      <div class="products-grid" id="raciones-grid"></div>
+    </section>
+
+    <!-- Kits del Viajero Section -->
+    <section id="kits" class="products-section">
+      <div class="section-header">
+        <span class="section-icon">📦</span>
+        <h2 class="section-title">Kits del Viajero</h2>
+        <p class="section-subtitle">Equipamiento para Aventureros</p>
+      </div>
+      <div class="products-grid" id="kits-grid"></div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <span class="logo-icon">✦</span>
+        <span>La Cocina del Alquimista</span>
+      </div>
+      <p class="footer-tagline">"Donde cada bocado es magia"</p>
+      <div class="footer-divider"></div>
+      <p class="copyright">© 2026 La Cocina del Alquimista. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
 </body>
 </html>
