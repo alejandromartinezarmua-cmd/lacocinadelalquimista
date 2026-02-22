@@ -81,29 +81,12 @@ function createProductCard(product) {
 }
 
 function renderProducts() {
-  // Tartas
-  document.getElementById('tartas-grid').innerHTML = 
-    products.tartas.map(createProductCard).join('');
-  
-  // Hechizos
-  document.getElementById('hechizos-grid').innerHTML = 
-    products.hechizos.map(createProductCard).join('');
-  
-  // Tortas Clásicas
-  document.getElementById('tortas-grid').innerHTML = 
-    products.tortas.map(createProductCard).join('');
-  
-  // Bombas & Brownie
-  document.getElementById('bombas-grid').innerHTML = 
-    products.bombas.map(createProductCard).join('');
-  
-  // Raciones del Viajero
-  document.getElementById('raciones-grid').innerHTML = 
-    products.raciones.map(createProductCard).join('');
-  
-  // Kits del Viajero
-  document.getElementById('kits-grid').innerHTML = 
-    products.kits.map(createProductCard).join('');
+  document.getElementById('tartas-grid').innerHTML = products.tartas.map(createProductCard).join('');
+  document.getElementById('hechizos-grid').innerHTML = products.hechizos.map(createProductCard).join('');
+  document.getElementById('tortas-grid').innerHTML = products.tortas.map(createProductCard).join('');
+  document.getElementById('bombas-grid').innerHTML = products.bombas.map(createProductCard).join('');
+  document.getElementById('raciones-grid').innerHTML = products.raciones.map(createProductCard).join('');
+  document.getElementById('kits-grid').innerHTML = products.kits.map(createProductCard).join('');
 }
 
 // ========================================
@@ -115,10 +98,9 @@ function initParticles() {
   const ctx = canvas.getContext('2d');
   
   let particles = [];
-  const particleCount = 80;
-  const connectionDistance = 150;
-  const mouseDistance = 200;
-  
+  const particleCount = 60;
+  const connectionDistance = 120;
+  const mouseDistance = 150;
   let mouse = { x: null, y: null };
   
   function resizeCanvas() {
@@ -130,11 +112,11 @@ function initParticles() {
     return {
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
-      vx: (Math.random() - 0.5) * 0.5,
-      vy: (Math.random() - 0.5) * 0.5,
-      size: Math.random() * 2 + 0.5,
-      alpha: Math.random() * 0.5 + 0.1,
-      color: Math.random() > 0.7 ? '#c9a227' : (Math.random() > 0.5 ? '#8b0000' : '#f5f5f5')
+      vx: (Math.random() - 0.5) * 0.3,
+      vy: (Math.random() - 0.5) * 0.3,
+      size: Math.random() * 1.5 + 0.5,
+      alpha: Math.random() * 0.4 + 0.1,
+      color: Math.random() > 0.7 ? '#d4af37' : (Math.random() > 0.5 ? '#8b0000' : '#f5f5f5')
     };
   }
   
@@ -162,9 +144,9 @@ function initParticles() {
         const distance = Math.sqrt(dx * dx + dy * dy);
         
         if (distance < connectionDistance) {
-          const opacity = (1 - distance / connectionDistance) * 0.15;
+          const opacity = (1 - distance / connectionDistance) * 0.1;
           ctx.beginPath();
-          ctx.strokeStyle = `rgba(201, 162, 39, ${opacity})`;
+          ctx.strokeStyle = `rgba(212, 175, 55, ${opacity})`;
           ctx.lineWidth = 0.5;
           ctx.moveTo(particles[i].x, particles[i].y);
           ctx.lineTo(particles[j].x, particles[j].y);
@@ -182,9 +164,9 @@ function initParticles() {
     const distance = Math.sqrt(dx * dx + dy * dy);
     
     if (distance < mouseDistance) {
-      const opacity = (1 - distance / mouseDistance) * 0.3;
+      const opacity = (1 - distance / mouseDistance) * 0.25;
       ctx.beginPath();
-      ctx.strokeStyle = `rgba(201, 162, 39, ${opacity})`;
+      ctx.strokeStyle = `rgba(212, 175, 55, ${opacity})`;
       ctx.lineWidth = 1;
       ctx.moveTo(particle.x, particle.y);
       ctx.lineTo(mouse.x, mouse.y);
@@ -197,7 +179,6 @@ function initParticles() {
       particle.x += particle.vx;
       particle.y += particle.vy;
       
-      // Wrap around screen
       if (particle.x < 0) particle.x = canvas.width;
       if (particle.x > canvas.width) particle.x = 0;
       if (particle.y < 0) particle.y = canvas.height;
@@ -209,20 +190,12 @@ function initParticles() {
   
   function animate() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    
-    // Draw particles
     particles.forEach(drawParticle);
-    
-    // Draw connections
     drawConnections();
-    
-    // Update positions
     updateParticles();
-    
     requestAnimationFrame(animate);
   }
   
-  // Event listeners
   window.addEventListener('resize', () => {
     resizeCanvas();
     initParticlesArray();
@@ -238,7 +211,6 @@ function initParticles() {
     mouse.y = null;
   });
   
-  // Initialize
   resizeCanvas();
   initParticlesArray();
   animate();
@@ -262,7 +234,6 @@ function initScrollReveal() {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
         
-        // Animate cards within the section
         const cards = entry.target.querySelectorAll('.product-card');
         cards.forEach((card, index) => {
           setTimeout(() => {
@@ -357,14 +328,14 @@ function initCardTilt() {
       const centerX = rect.width / 2;
       const centerY = rect.height / 2;
       
-      const rotateX = (y - centerY) / 20;
-      const rotateY = (centerX - x) / 20;
+      const rotateX = (y - centerY) / 25;
+      const rotateY = (centerX - x) / 25;
       
-      card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(20px)`;
+      card.style.transform = `perspective(1400px) translateZ(30px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
     });
     
     card.addEventListener('mouseleave', () => {
-      card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateZ(0)';
+      card.style.transform = 'perspective(1400px) translateZ(0) rotateX(0) rotateY(0)';
     });
   });
 }
@@ -378,11 +349,9 @@ function initNavbarScroll() {
   
   window.addEventListener('scroll', () => {
     if (window.scrollY > 50) {
-      navbar.style.background = 'rgba(10, 10, 10, 0.98)';
-      navbar.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.5)';
+      navbar.classList.add('scrolled');
     } else {
-      navbar.style.background = 'linear-gradient(180deg, rgba(10, 10, 10, 0.95) 0%, rgba(10, 10, 10, 0.8) 100%)';
-      navbar.style.boxShadow = 'none';
+      navbar.classList.remove('scrolled');
     }
   });
 }
@@ -393,9 +362,13 @@ function initNavbarScroll() {
 
 document.addEventListener('DOMContentLoaded', () => {
   renderProducts();
-  initParticles();
-  initScrollReveal();
-  initNavigation();
-  initCardTilt();
-  initNavbarScroll();
+
+  // NAVBAR SCROLL BLUR
+  const navbar = document.querySelector('.navbar');
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 60) {
+      navbar.style.background = 'rgba(0,0,0,0.9)';
+      navbar.style.backdropFilter = 'blur(10px)';
+    }
+  });
 });
