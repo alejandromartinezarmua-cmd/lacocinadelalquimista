@@ -1,48 +1,38 @@
-<!-- ==================== INDEX.HTML ==================== -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>La Cocina del Alquimista</title>
+<title>La Cocina del Alquimista - Catálogo Completo</title>
 <style>
-body { font-family: Arial, sans-serif; margin:0; background:#f5f5f5; color:#333; scroll-behavior: smooth; }
+body { font-family: Arial, sans-serif; margin:0; background:#f5f5f5; color:#333; scroll-behavior:smooth; }
 a { text-decoration:none; color:inherit; }
 header { position: fixed; top:0; width:100%; background:#fff; box-shadow:0 2px 5px rgba(0,0,0,0.1); z-index:1000; }
-nav { display:flex; justify-content:center; padding:1em; }
+nav { display:flex; justify-content:center; padding:1em; flex-wrap:wrap; }
 nav a { margin:0 1em; font-weight:bold; transition: color 0.3s; }
 nav a:hover { color:#b77c4a; }
 .spacer { height:60px; }
-.hero { height:80vh; background: url('./images/foto1.png') center/cover no-repeat; display:flex; justify-content:center; align-items:center; text-align:center; color:#fff; position:relative; overflow:hidden; }
+.hero { height:50vh; background: url('./images/foto1.png') center/cover no-repeat; display:flex; justify-content:center; align-items:center; text-align:center; color:#fff; position:relative; overflow:hidden; }
 .hero::after { content:''; position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.4);}
 .hero h1, .hero p, .hero a { position:relative; z-index:1; }
-.hero h1 { font-size:3em; margin-bottom:0.5em; }
-.hero p { font-size:1.3em; margin-bottom:1.5em; }
+.hero h1 { font-size:2.5em; margin-bottom:0.5em; }
+.hero p { font-size:1.2em; margin-bottom:1em; }
 .hero a { background:#b77c4a; color:#fff; padding:0.8em 1.5em; border-radius:5px; }
 .hero a:hover { background:#a06639; }
-.about { background: rgba(255,255,255,0.95); padding: 60px 20px; text-align: center; max-width: 900px; margin: -50px auto 50px auto; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transform: translateX(-100%); opacity:0; animation: slideIn 1s forwards 0.2s; }
-.about h2 { font-size: 2em; margin-bottom: 1em; }
-.about p { font-size: 1.1em; line-height: 1.6; }
-section { padding:80px 20px; max-width:1000px; margin:auto; transform: translateX(100%); opacity:0; animation: slideIn 1s forwards; }
-section:nth-of-type(3) { animation-delay: 0.4s; }
-section:nth-of-type(4) { animation-delay: 0.6s; }
-section:nth-of-type(5) { animation-delay: 0.8s; }
+section { padding:80px 20px; max-width:1000px; margin:auto; }
 section h2 { text-align:center; margin-bottom:2em; }
 .products-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
 article.product { background:#fff; padding:15px; border-radius:10px; text-align:center; box-shadow:0 3px 10px rgba(0,0,0,0.1); transition: transform 0.2s, box-shadow 0.2s; }
 article.product:hover { transform: translateY(-5px); box-shadow:0 6px 18px rgba(0,0,0,0.2); }
 article.product img { width:100%; border-radius:10px; margin-bottom:10px; }
 footer { text-align:center; padding:2em; background:#fff; margin-top:50px; box-shadow:0 -2px 4px rgba(0,0,0,0.1);}
-@keyframes slideIn { to { transform: translateX(0); opacity:1; } }
 @media (max-width:768px){
   nav { flex-direction: column; padding:0.5em; }
   nav a { margin:0.5em 0; }
-  .hero h1 { font-size:2em; }
+  .hero h1 { font-size:1.8em; }
   .hero p { font-size:1em; }
-  .hero a { padding:0.6em 1em; font-size:0.9em; }
   .products-grid { grid-template-columns:1fr; }
   section { padding:50px 15px; }
-  .about { margin:0 10px 50px 10px; padding:30px 15px; }
 }
 </style>
 </head>
@@ -50,192 +40,408 @@ footer { text-align:center; padding:2em; background:#fff; margin-top:50px; box-s
 <header>
   <nav>
     <a href="#home">Home</a>
-    <a href="#about">Sobre Nosotros</a>
-    <a href="#tortas">Tortas</a>
+    <a href="#panes">Panes</a>
+    <a href="#kits">Kits</a>
+    <a href="#tartas">Tartas</a>
     <a href="#postres">Postres</a>
-    <a href="#boxes">Boxes</a>
   </nav>
 </header>
 <div class="spacer"></div>
 
+<!-- HERO -->
 <section id="home" class="hero">
   <div>
     <h1>La Cocina del Alquimista</h1>
-    <p>Bienvenido al catálogo artesanal de tortas, postres y boxes. Cada creación tiene su magia.</p>
-    <a href="#about">Conoce nuestra historia</a>
+    <p>Bienvenido a nuestro catálogo de panes, kits, tartas y postres mágicos</p>
+    <a href="#panes">Explorar productos</a>
   </div>
 </section>
 
-<section id="about" class="about">
-  <h2>Sobre La Cocina del Alquimista</h2>
-  <p>Cada torta es un experimento de sabor y pasión. Nuestro nombre refleja la magia de combinar ingredientes y transformar simples elementos en experiencias únicas.</p>
+<!-- PANES -->
+<section id="panes">
+<h2>Panes</h2>
+<div class="products-grid">
+<article class="product">
+<img src="./images/foto1.png" alt="Feather Fall">
+<h3>Feather Fall</h3>
+<p>Miga aireada, suave, liviana y crocante. Podes comerla sola, rellena o acompañada con humus.</p>
+<p>Entera $500 / Porción $100</p>
+</article>
+<article class="product">
+<img src="./images/foto2.png" alt="Magic Missile">
+<h3>Magic Missile</h3>
+<p>Brioche, masa suave, ideal para sandwiches y hamburguesas.</p>
+<p>6x $225 / 12x $420</p>
+</article>
+<article class="product">
+<img src="./images/foto3.png" alt="Charm Person">
+<h3>Charm Person</h3>
+<p>Pan de 3 colores, miga suave, con puré de verduras, ideal para pebetes y mini hamburguesas.</p>
+<p>6x $148 / 12x $290</p>
+</article>
+<article class="product">
+<img src="./images/foto4.png" alt="Detect Magic">
+<h3>Detect Magic</h3>
+<p>Chipa rellena de abundante queso, ideal para mate, merienda o series.</p>
+<p>6x $230 / 12x $390</p>
+</article>
+<article class="product">
+<img src="./images/foto5.png" alt="Firebolt">
+<h3>Firebolt</h3>
+<p>Pan de Ajo y Queso, crocante y suave, perfecto para mates o café.</p>
+<p>6x $200 / 12x $370</p>
+</article>
+<article class="product">
+<img src="./images/foto6.png" alt="Tenser's Floating Disk">
+<h3>Tenser's Floating Disk</h3>
+<p>Bagels suaves y crocantes, ideales para desayuno, merienda o relleno dulce/salado.</p>
+<p>6x $270 / 12x $420</p>
+</article>
+<article class="product">
+<img src="./images/foto7.png" alt="Magic Weapon">
+<h3>Magic Weapon</h3>
+<p>Palitos de queso crocantes, ideales para merienda o un antojo.</p>
+<p>6x $220 / 12x $370</p>
+</article>
+</div>
 </section>
 
-<section id="tortas">
-  <h2>🍰 Tortas</h2>
-  <div class="products-grid">
-    <article class="product">
-      <a href="torta-tres-leches.html"><img src="./images/foto1.png" alt="Torta Tres Leches"></a>
-      <h3><a href="torta-tres-leches.html">Torta Tres Leches</a></h3>
-      <p>$850</p>
-    </article>
-    <article class="product">
-      <a href="cheesecake.html"><img src="./images/foto2.png" alt="Cheesecake"></a>
-      <h3><a href="cheesecake.html">Cheesecake clásico</a></h3>
-      <p>$700</p>
-    </article>
-  </div>
+<!-- KITS -->
+<section id="kits">
+<h2>Kits</h2>
+<div class="products-grid">
+<article class="product">
+<img src="./images/foto8.png" alt="Kit Banquete Medieval">
+<h3>Kit "Banquete Medieval"</h3>
+<p>Ideal para reuniones: 12 Chipa, 12 Palitos de queso, 1 Focaccia.</p>
+<p>$1200</p>
+</article>
+<article class="product">
+<img src="./images/foto9.png" alt="Kit Ritual de Colores">
+<h3>Kit "Ritual de Colores"</h3>
+<p>Ideal para niños: 6 Panes de 3 colores, 6 Brioche, 6 Palitos de queso.</p>
+<p>$550</p>
+</article>
+<article class="product">
+<img src="./images/foto10.png" alt="Kit Taberna de Pueblo">
+<h3>Kit "Taberna de Pueblo"</h3>
+<p>Ideal para picada: 6 Chipa, 6 Palitos de queso, 6 Panes de ajo y queso.</p>
+<p>$600</p>
+</article>
+<article class="product">
+<img src="./images/foto11.png" alt="Kit Prueba del Aprendiz">
+<h3>Kit "Prueba del Aprendiz"</h3>
+<p>3 Chipa, 3 Palitos, 1 Porción de Focaccia.</p>
+<p>$200</p>
+</article>
+<article class="product">
+<img src="./images/foto12.png" alt="Kit Maestro Viajero">
+<h3>Kit "Maestro Viajero"</h3>
+<p>6 Bagels, 6 Brioche, 6 Panes de ajo y queso.</p>
+<p>$700</p>
+</article>
+<article class="product">
+<img src="./images/foto13.png" alt="Kit Fuego y Queso">
+<h3>Kit "Fuego y Queso"</h3>
+<p>12 Palitos de queso, 12 Chipa. Favorito del pueblo.</p>
+<p>$750</p>
+</article>
+</div>
 </section>
 
+<!-- TARTAS -->
+<section id="tartas">
+<h2>Tartas</h2>
+<div class="products-grid">
+<article class="product">
+<img src="./images/foto14.png" alt="Lemon Pie Del Hechicero">
+<h3>Lemon Pie Del Hechicero</h3>
+<p>Base crocante, Curd de limón artesanal y merengue suave.</p>
+<p>23cm / $1500</p>
+</article>
+<article class="product">
+<img src="./images/foto15.png" alt="Tarta DDL y Coco Esencia Lunar">
+<h3>Tarta DDL y Coco Esencia Lunar</h3>
+<p>Base crocante rellena con dulce de leche y capa de coco suave.</p>
+<p>23cm / $1300</p>
+</article>
+<article class="product">
+<img src="./images/foto16.png" alt="Tarta Tofi Ojo del Abismo">
+<h3>Tarta Tofi Ojo del Abismo</h3>
+<p>Masa crocante con dulce de leche y ganache de chocolate.</p>
+<p>23cm / $1600</p>
+</article>
+<article class="product">
+<img src="./images/foto17.png" alt="Tarta De Durazno Hechizo De Oro">
+<h3>Tarta De Durazno Hechizo De Oro</h3>
+<p>Masa crocante, crema pastelera artesanal y duraznos.</p>
+<p>23cm / $1100</p>
+</article>
+<article class="product">
+<img src="./images/foto18.png" alt="Carrot Cake del Grimorio">
+<h3>Carrot Cake del Grimorio</h3>
+<p>Bizcocho de zanahoria especiado con frosting de queso crema.</p>
+<p>23cm / $2000 / 18cm $1300</p>
+</article>
+</div>
+</section>
+
+<!-- POSTRES Y POCIONES -->
 <section id="postres">
-  <h2>🍪 Postres</h2>
-  <div class="products-grid">
-    <article class="product">
-      <a href="brownie.html"><img src="./images/foto3.png" alt="Brownie clásico"></a>
-      <h3><a href="brownie.html">Brownie clásico</a></h3>
-      <p>$480</p>
-    </article>
-  </div>
-</section>
-
-<section id="boxes">
-  <h2>🎁 Boxes</h2>
-  <div class="products-grid">
-    <article class="product">
-      <a href="box-desayuno.html"><img src="./images/foto1.png" alt="Box desayuno"></a>
-      <h3><a href="box-desayuno.html">Box desayuno clásico</a></h3>
-      <p>$1200</p>
-    </article>
-    <article class="product">
-      <a href="box-premium.html"><img src="./images/foto2.png" alt="Box premium"></a>
-      <h3><a href="box-premium.html">Box premium</a></h3>
-      <p>$1800</p>
-    </article>
-  </div>
+<h2>Postres y Pociones</h2>
+<div class="products-grid">
+<article class="product">
+<img src="./images/foto19.png" alt="Profiteroles / Bombas de DDL">
+<h3>Profiteroles / Bombas de DDL</h3>
+<p>Bombas de crema pastelera y porciones de brownie.</p>
+<p>Variedad según el kit</p>
+</article>
+<article class="product">
+<img src="./images/foto20.png" alt="Poción Pequeña">
+<h3>Poción Pequeña</h3>
+<p>3 Bombas mixtas, 3 porciones de Brownie.</p>
+<p>$650</p>
+</article>
+<article class="product">
+<img src="./images/foto21.png" alt="Poción Mediana">
+<h3>Poción Mediana</h3>
+<p>6 Bombas mixtas, 6 porciones de Brownie.</p>
+<p>$1400</p>
+</article>
+<article class="product">
+<img src="./images/foto22.png" alt="Poción Grande">
+<h3>Poción Grande</h3>
+<p>12 Bombas mixtas, 12 porciones de Brownie.</p>
+<p>$2600</p>
+</article>
+</div>
 </section>
 
 <footer>
-  <p>© 2026 La Cocina del Alquimista</p>
+<p>© 2026 La Cocina del Alquimista</p>
 </footer>
 </body>
-</html>
-
-<!-- ==================== TORTA-TRES-LECHES.HTML ==================== -->
-<!DOCTYPE html>
+</html><!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Torta Tres Leches</title>
+<title>La Cocina del Alquimista - Catálogo Completo</title>
 <style>
-body { font-family: Arial; padding:20px; background:#f9f9f9; }
-img { width:100%; max-width:400px; border-radius:10px; }
-a { color:#b77c4a; text-decoration:none; }
-a:hover { text-decoration:underline; }
+body { font-family: Arial, sans-serif; margin:0; background:#f5f5f5; color:#333; scroll-behavior:smooth; }
+a { text-decoration:none; color:inherit; }
+header { position: fixed; top:0; width:100%; background:#fff; box-shadow:0 2px 5px rgba(0,0,0,0.1); z-index:1000; }
+nav { display:flex; justify-content:center; padding:1em; flex-wrap:wrap; }
+nav a { margin:0 1em; font-weight:bold; transition: color 0.3s; }
+nav a:hover { color:#b77c4a; }
+.spacer { height:60px; }
+.hero { height:50vh; background: url('./images/foto1.png') center/cover no-repeat; display:flex; justify-content:center; align-items:center; text-align:center; color:#fff; position:relative; overflow:hidden; }
+.hero::after { content:''; position:absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.4);}
+.hero h1, .hero p, .hero a { position:relative; z-index:1; }
+.hero h1 { font-size:2.5em; margin-bottom:0.5em; }
+.hero p { font-size:1.2em; margin-bottom:1em; }
+.hero a { background:#b77c4a; color:#fff; padding:0.8em 1.5em; border-radius:5px; }
+.hero a:hover { background:#a06639; }
+section { padding:80px 20px; max-width:1000px; margin:auto; }
+section h2 { text-align:center; margin-bottom:2em; }
+.products-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
+article.product { background:#fff; padding:15px; border-radius:10px; text-align:center; box-shadow:0 3px 10px rgba(0,0,0,0.1); transition: transform 0.2s, box-shadow 0.2s; }
+article.product:hover { transform: translateY(-5px); box-shadow:0 6px 18px rgba(0,0,0,0.2); }
+article.product img { width:100%; border-radius:10px; margin-bottom:10px; }
+footer { text-align:center; padding:2em; background:#fff; margin-top:50px; box-shadow:0 -2px 4px rgba(0,0,0,0.1);}
+@media (max-width:768px){
+  nav { flex-direction: column; padding:0.5em; }
+  nav a { margin:0.5em 0; }
+  .hero h1 { font-size:1.8em; }
+  .hero p { font-size:1em; }
+  .products-grid { grid-template-columns:1fr; }
+  section { padding:50px 15px; }
+}
 </style>
 </head>
 <body>
-<a href="index.html">&larr; Volver al catálogo</a>
-<h1>Torta Tres Leches</h1>
-<img src="./images/foto1.png" alt="Torta Tres Leches">
-<p>Deliciosa torta de tres leches, suave y esponjosa. Ideal para cumpleaños y celebraciones.</p>
-<p>Precio: $850</p>
-<p>Ingredientes: leche condensada, crema, bizcocho esponjoso, leche evaporada.</p>
-</body>
-</html>
+<header>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#panes">Panes</a>
+    <a href="#kits">Kits</a>
+    <a href="#tartas">Tartas</a>
+    <a href="#postres">Postres</a>
+  </nav>
+</header>
+<div class="spacer"></div>
 
-<!-- ==================== CHEESECAKE.HTML ==================== -->
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Cheesecake clásico</title>
-<style>
-body { font-family: Arial; padding:20px; background:#f9f9f9; }
-img { width:100%; max-width:400px; border-radius:10px; }
-a { color:#b77c4a; text-decoration:none; }
-a:hover { text-decoration:underline; }
-</style>
-</head>
-<body>
-<a href="index.html">&larr; Volver al catálogo</a>
-<h1>Cheesecake clásico</h1>
-<img src="./images/foto2.png" alt="Cheesecake clásico">
-<p>Cheesecake cremoso con base de galleta, ideal para los amantes del queso y el dulce perfecto.</p>
-<p>Precio: $700</p>
-<p>Ingredientes: queso crema, galletas, manteca, azúcar, huevos.</p>
-</body>
-</html>
+<!-- HERO -->
+<section id="home" class="hero">
+  <div>
+    <h1>La Cocina del Alquimista</h1>
+    <p>Bienvenido a nuestro catálogo de panes, kits, tartas y postres mágicos</p>
+    <a href="#panes">Explorar productos</a>
+  </div>
+</section>
 
-<!-- ==================== BROWNIE.HTML ==================== -->
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Brownie clásico</title>
-<style>
-body { font-family: Arial; padding:20px; background:#f9f9f9; }
-img { width:100%; max-width:400px; border-radius:10px; }
-a { color:#b77c4a; text-decoration:none; }
-a:hover { text-decoration:underline; }
-</style>
-</head>
-<body>
-<a href="index.html">&larr; Volver al catálogo</a>
-<h1>Brownie clásico</h1>
-<img src="./images/foto3.png" alt="Brownie clásico">
-<p>Brownie de chocolate intenso, húmedo y esponjoso. Perfecto para acompañar con café o té.</p>
-<p>Precio: $480</p>
-<p>Ingredientes: chocolate, manteca, azúcar, huevos, harina.</p>
-</body>
-</html>
+<!-- PANES -->
+<section id="panes">
+<h2>Panes</h2>
+<div class="products-grid">
+<article class="product">
+<img src="./images/foto1.png" alt="Feather Fall">
+<h3>Feather Fall</h3>
+<p>Miga aireada, suave, liviana y crocante. Podes comerla sola, rellena o acompañada con humus.</p>
+<p>Entera $500 / Porción $100</p>
+</article>
+<article class="product">
+<img src="./images/foto2.png" alt="Magic Missile">
+<h3>Magic Missile</h3>
+<p>Brioche, masa suave, ideal para sandwiches y hamburguesas.</p>
+<p>6x $225 / 12x $420</p>
+</article>
+<article class="product">
+<img src="./images/foto3.png" alt="Charm Person">
+<h3>Charm Person</h3>
+<p>Pan de 3 colores, miga suave, con puré de verduras, ideal para pebetes y mini hamburguesas.</p>
+<p>6x $148 / 12x $290</p>
+</article>
+<article class="product">
+<img src="./images/foto4.png" alt="Detect Magic">
+<h3>Detect Magic</h3>
+<p>Chipa rellena de abundante queso, ideal para mate, merienda o series.</p>
+<p>6x $230 / 12x $390</p>
+</article>
+<article class="product">
+<img src="./images/foto5.png" alt="Firebolt">
+<h3>Firebolt</h3>
+<p>Pan de Ajo y Queso, crocante y suave, perfecto para mates o café.</p>
+<p>6x $200 / 12x $370</p>
+</article>
+<article class="product">
+<img src="./images/foto6.png" alt="Tenser's Floating Disk">
+<h3>Tenser's Floating Disk</h3>
+<p>Bagels suaves y crocantes, ideales para desayuno, merienda o relleno dulce/salado.</p>
+<p>6x $270 / 12x $420</p>
+</article>
+<article class="product">
+<img src="./images/foto7.png" alt="Magic Weapon">
+<h3>Magic Weapon</h3>
+<p>Palitos de queso crocantes, ideales para merienda o un antojo.</p>
+<p>6x $220 / 12x $370</p>
+</article>
+</div>
+</section>
 
-<!-- ==================== BOX-DESAYUNO.HTML ==================== -->
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Box desayuno clásico</title>
-<style>
-body { font-family: Arial; padding:20px; background:#f9f9f9; }
-img { width:100%; max-width:400px; border-radius:10px; }
-a { color:#b77c4a; text-decoration:none; }
-a:hover { text-decoration:underline; }
-</style>
-</head>
-<body>
-<a href="index.html">&larr; Volver al catálogo</a>
-<h1>Box desayuno clásico</h1>
-<img src="./images/foto1.png" alt="Box desayuno clásico">
-<p>Box ideal para empezar el día con todo: incluye selección de tortas, galletas y más.</p>
-<p>Precio: $1200</p>
-<p>Contenido: torta pequeña, galletas artesanales, jugo natural.</p>
-</body>
-</html>
+<!-- KITS -->
+<section id="kits">
+<h2>Kits</h2>
+<div class="products-grid">
+<article class="product">
+<img src="./images/foto8.png" alt="Kit Banquete Medieval">
+<h3>Kit "Banquete Medieval"</h3>
+<p>Ideal para reuniones: 12 Chipa, 12 Palitos de queso, 1 Focaccia.</p>
+<p>$1200</p>
+</article>
+<article class="product">
+<img src="./images/foto9.png" alt="Kit Ritual de Colores">
+<h3>Kit "Ritual de Colores"</h3>
+<p>Ideal para niños: 6 Panes de 3 colores, 6 Brioche, 6 Palitos de queso.</p>
+<p>$550</p>
+</article>
+<article class="product">
+<img src="./images/foto10.png" alt="Kit Taberna de Pueblo">
+<h3>Kit "Taberna de Pueblo"</h3>
+<p>Ideal para picada: 6 Chipa, 6 Palitos de queso, 6 Panes de ajo y queso.</p>
+<p>$600</p>
+</article>
+<article class="product">
+<img src="./images/foto11.png" alt="Kit Prueba del Aprendiz">
+<h3>Kit "Prueba del Aprendiz"</h3>
+<p>3 Chipa, 3 Palitos, 1 Porción de Focaccia.</p>
+<p>$200</p>
+</article>
+<article class="product">
+<img src="./images/foto12.png" alt="Kit Maestro Viajero">
+<h3>Kit "Maestro Viajero"</h3>
+<p>6 Bagels, 6 Brioche, 6 Panes de ajo y queso.</p>
+<p>$700</p>
+</article>
+<article class="product">
+<img src="./images/foto13.png" alt="Kit Fuego y Queso">
+<h3>Kit "Fuego y Queso"</h3>
+<p>12 Palitos de queso, 12 Chipa. Favorito del pueblo.</p>
+<p>$750</p>
+</article>
+</div>
+</section>
 
-<!-- ==================== BOX-PREMIUM.HTML ==================== -->
-<!DOCTYPE html>
-<html lang="es">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Box premium</title>
-<style>
-body { font-family: Arial; padding:20px; background:#f9f9f9; }
-img { width:100%; max-width:400px; border-radius:10px; }
-a { color:#b77c4a; text-decoration:none; }
-a:hover { text-decoration:underline; }
-</style>
-</head>
-<body>
-<a href="index.html">&larr; Volver al catálogo</a>
-<h1>Box premium</h1>
-<img src="./images/foto2.png" alt="Box premium">
-<p>Box premium con productos seleccionados para sorprender y disfrutar al máximo.</p>
-<p>Precio: $1800</p>
-<p>Contenido: torta mediana, selección de postres, jugo premium, detalles decorativos.</p>
+<!-- TARTAS -->
+<section id="tartas">
+<h2>Tartas</h2>
+<div class="products-grid">
+<article class="product">
+<img src="./images/foto14.png" alt="Lemon Pie Del Hechicero">
+<h3>Lemon Pie Del Hechicero</h3>
+<p>Base crocante, Curd de limón artesanal y merengue suave.</p>
+<p>23cm / $1500</p>
+</article>
+<article class="product">
+<img src="./images/foto15.png" alt="Tarta DDL y Coco Esencia Lunar">
+<h3>Tarta DDL y Coco Esencia Lunar</h3>
+<p>Base crocante rellena con dulce de leche y capa de coco suave.</p>
+<p>23cm / $1300</p>
+</article>
+<article class="product">
+<img src="./images/foto16.png" alt="Tarta Tofi Ojo del Abismo">
+<h3>Tarta Tofi Ojo del Abismo</h3>
+<p>Masa crocante con dulce de leche y ganache de chocolate.</p>
+<p>23cm / $1600</p>
+</article>
+<article class="product">
+<img src="./images/foto17.png" alt="Tarta De Durazno Hechizo De Oro">
+<h3>Tarta De Durazno Hechizo De Oro</h3>
+<p>Masa crocante, crema pastelera artesanal y duraznos.</p>
+<p>23cm / $1100</p>
+</article>
+<article class="product">
+<img src="./images/foto18.png" alt="Carrot Cake del Grimorio">
+<h3>Carrot Cake del Grimorio</h3>
+<p>Bizcocho de zanahoria especiado con frosting de queso crema.</p>
+<p>23cm / $2000 / 18cm $1300</p>
+</article>
+</div>
+</section>
+
+<!-- POSTRES Y POCIONES -->
+<section id="postres">
+<h2>Postres y Pociones</h2>
+<div class="products-grid">
+<article class="product">
+<img src="./images/foto19.png" alt="Profiteroles / Bombas de DDL">
+<h3>Profiteroles / Bombas de DDL</h3>
+<p>Bombas de crema pastelera y porciones de brownie.</p>
+<p>Variedad según el kit</p>
+</article>
+<article class="product">
+<img src="./images/foto20.png" alt="Poción Pequeña">
+<h3>Poción Pequeña</h3>
+<p>3 Bombas mixtas, 3 porciones de Brownie.</p>
+<p>$650</p>
+</article>
+<article class="product">
+<img src="./images/foto21.png" alt="Poción Mediana">
+<h3>Poción Mediana</h3>
+<p>6 Bombas mixtas, 6 porciones de Brownie.</p>
+<p>$1400</p>
+</article>
+<article class="product">
+<img src="./images/foto22.png" alt="Poción Grande">
+<h3>Poción Grande</h3>
+<p>12 Bombas mixtas, 12 porciones de Brownie.</p>
+<p>$2600</p>
+</article>
+</div>
+</section>
+
+<footer>
+<p>© 2026 La Cocina del Alquimista</p>
+</footer>
 </body>
 </html>
